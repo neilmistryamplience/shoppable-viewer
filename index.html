@@ -33,10 +33,50 @@
 <script>
     window.ajsViewer = new PDFViewer({
         setData: {
-            account: 'csdemo',
-            name: 'CA-catalogue_set',
-            path: 'http://i1.adis.ws/',
+            account: 'nmdemo',
+            name: 'carrefour-catalogue_-_Le meilleur-du-bio-moins-cher_set',
+            path: 'https://i8.amplience.net/',
             type: 's'
+        },
+        ampTemplates: {
+            thumb: 'w=200&qlt=70',
+            mainPic: [
+            {
+                name: 'xl',
+                tpl: 'w=1600&qlt=60',
+                tpl2x: 'w=3200&qlt=60',
+                minWidth: 1600
+            },
+            {
+                name: 'l',
+                tpl: 'w=1280&qlt=60',
+                tpl2x: 'w=2560&qlt=60',
+                minWidth: 1280
+            },
+            {
+                name: 'm',
+                tpl: 'w=1024&qlt=60',
+                tpl2x: 'w=2048&qlt=60',
+                minWidth: 1024
+            },
+            {
+                name: 's',
+                tpl: 'w=768&qlt=60',
+                tpl2x: 'w=1536&qlt=60',
+                minWidth: 768
+            },
+            {
+                name: 'xs',
+                tpl: 'w=320&qlt=60',
+                tpl2x: 'w=640&qlt=60',
+                minWidth: 1
+            },
+            {
+                name: 'default',
+                tpl: 'w=1600&qlt=60',
+                tpl2x: 'w=3200&qlt=60'
+            }
+            ]
         },
         target: '.ajs-pdf-viewer',
         buttons: {
@@ -65,6 +105,33 @@
                 linkClass: 'apdf-header-link',
                 icoClass: 'apdf-icon-download',
                 url: '#2'
+            }
+        },
+        carousel: {
+            nextButton: '.ajs-swiper-next-',
+            prevButton: '.ajs-swiper-prev-',
+            speed: 300,
+            slidesPerView: 2,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: false,
+            hashnav: true,
+            hashnavWatchState: true,
+            preloadImages: false,
+            lazyLoading: true,
+            lazyLoadingInPrevNext: true,
+            lazyLoadingInPrevNextAmount: 1,
+            lazyLoadingOnTransitionStart: true
+        },
+        carouselCallbacks: {
+            onInit: (swiper, viewer) => {
+                console.log('Carousel initiated');
+            },
+            onSlideChangeStart: (swiper, viewer) => {
+                console.log('Slide change start');
+            },
+            onSlideChangeEnd: (swiper, viewer) => {
+                console.log('Slide change end');
             }
         },
         POI: {

@@ -17,7 +17,7 @@
     .swiper-slide,
     .ajs-pdf-zoom-wrap {
       text-align: center;
-      height: 100%;
+      height: auto;
       position: relative;
       z-index: 2;
     }
@@ -32,7 +32,7 @@
       vertical-align: top;
       text-align: center;
       width: auto;
-      height: 100%;
+      height: auto;
       min-width: 0;
     }
   }
