@@ -94,30 +94,30 @@
   max-width: 1181px; }
   .apdf-carousel-box .apdf-carousel-wrap {
     border: 1px solid #383838;
-    padding: 5%; }
+    padding: 0%; }
   .apdf-carousel-box .swiper-slide-img {
-    width: 100%; }
+    width: 100%;
+    height: inherit; }
   .apdf-carousel-box.apdf-carousel-aspect .swiper-slide,
   .apdf-carousel-box.apdf-carousel-aspect .ajs-pdf-zoom-wrap {
     text-align: center;
-    height: auto;
     position: relative;
     z-index: 2; }
   .apdf-carousel-box.apdf-carousel-aspect .ajs-pdf-zoom-wrap {
-    margin: 0 auto; }
+    margin: 0 auto;
+    height: inherit; }
   .apdf-carousel-box.apdf-carousel-aspect .swiper-slide-img,
   .apdf-carousel-box.apdf-carousel-aspect .swiper-slide-pic {
     display: inline;
     vertical-align: top;
     text-align: center;
     width: auto;
-    height: auto;
+    height: inherit;
     min-width: 0; }
   .apdf-carousel-box .ajs-zoom-overlay {
     cursor: move; }
   .apdf-carousel-box .ajs-zoom-wrap .ajs-zoomed {
     width: auto;
-    height: auto;
     max-width: none; }
   .apdf-carousel-box .carousel-preloader {
     z-index: -1; }
@@ -175,7 +175,8 @@
     display: block;
     margin: 0 auto; }
   .apdf-contents-thumb:hover {
-    border: 1px solid #383838; }
+    border: 1px solid #383838;
+    cursor: pointer; }
   .apdf-contents-thumb.selected {
     border: 2px solid #383838; }
   .apdf-contents-thumb .apdf-contents-paging {
@@ -254,48 +255,53 @@
   stroke-linecap: round; }
 
 .apdf-carousel-box svg g polygon {
-  fill: transparent;
+  fill: rgba(255, 255, 255, 0.2);
   opacity: 1;
-  stroke: #000;
-  stroke-width: 10;
-  stroke-dasharray: 0 26;
+  stroke: #e52717;
+  stroke-width: 3;
+  stroke-dasharray: 0 10;
   stroke-linecap: round; }
 
 @-webkit-keyframes square-anim {
   25% {
     stroke-dasharray: 0 19.5;
-    opacity: 0.5; }
+    opacity: 0.2;
+    fill: rgba(255, 255, 255, 0.9); }
   50% {
     stroke-dasharray: 0 13;
-    opacity: 0.7; }
+    opacity: 0;
+    fill: white; }
   75% {
     stroke-dasharray: 0 6.5;
-    opacity: 0.8; }
+    opacity: 0;
+    fill: rgba(255, 255, 255, 0.5); }
   100% {
     stroke-dasharray: 0 0;
+    fill: rgba(255, 255, 255, 0);
     opacity: 1; } }
 
 .apdf-carousel-box svg g:hover polygon {
-  animation: square-anim 0.1s 1 ease-out;
-  animation-fill-mode: forwards; }
+  animation: square-anim 0.4s 1 ease-out;
+  animation-fill-mode: forwards;
+  cursor: pointer; }
 
-.hotspot {
+.product {
   position: relative;
   width: 30px;
   height: 30px;
   margin-left: -17px;
   margin-top: -17px;
-  border: 2px solid #fff;
+  border: 2px solid #e52717;
   z-index: 2;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   cursor: pointer; }
 
-.hotspot:after {
+.product:after {
   content: '';
-  background: #000;
-  opacity: 0.4;
+  background: #fff;
+  opacity: 0.2;
   position: absolute;
   top: 0;
   left: 0;

@@ -23,7 +23,7 @@ $icon-hotspot: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" x
 $carousel-box-padding: 0 60px;
 $carousel-box-padding: 0 60px;
 $carousel-border-style: 1px solid #383838;
-$carousel-padding: 5%;
+$carousel-padding: 0%;
 
 @mixin carousel-box($padding: 0 50px, $maxWidth: 1181px) {
   padding: $padding;

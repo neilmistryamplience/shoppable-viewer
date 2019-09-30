@@ -32,49 +32,51 @@
 
 <script>
     window.ajsViewer = new PDFViewer({
+        title: 'AW19',
+        cache: Math.random(),
         setData: {
             account: 'nmdemo',
-            name: 'carrefour-catalogue_-_Le meilleur-du-bio-moins-cher_set',
+            name: 'OBA_AW19_set',
             path: 'https://i8.amplience.net/',
             type: 's'
         },
         ampTemplates: {
-            thumb: 'w=200&qlt=70',
+            thumb: 'w=200&qlt=70&upscale=false&fmt.jpeg.chroma=1,1,1&unsharp=0,1,1,7',
             mainPic: [
             {
                 name: 'xl',
-                tpl: 'w=1600&qlt=60',
-                tpl2x: 'w=3200&qlt=60',
+                tpl: 'w=1600&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=3200&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1',
                 minWidth: 1600
             },
             {
                 name: 'l',
-                tpl: 'w=1280&qlt=60',
-                tpl2x: 'w=2560&qlt=60',
+                tpl: 'w=1280&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=2560&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1',
                 minWidth: 1280
             },
             {
                 name: 'm',
-                tpl: 'w=1024&qlt=60',
-                tpl2x: 'w=2048&qlt=60',
+                tpl: 'w=1024&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=2048&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1',
                 minWidth: 1024
             },
             {
                 name: 's',
-                tpl: 'w=768&qlt=60',
-                tpl2x: 'w=1536&qlt=60',
+                tpl: 'w=768&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=1536&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1',
                 minWidth: 768
             },
             {
                 name: 'xs',
-                tpl: 'w=320&qlt=60',
-                tpl2x: 'w=640&qlt=60',
+                tpl: 'w=320&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=640&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1',
                 minWidth: 1
             },
             {
                 name: 'default',
-                tpl: 'w=1600&qlt=60',
-                tpl2x: 'w=3200&qlt=60'
+                tpl: 'w=1600&qlt=75&upscale=false&fmt.jpeg.chroma=1,1,1',
+                tpl2x: 'w=3200&qlt=60&upscale=false&fmt.jpeg.chroma=1,1,1'
             }
             ]
         },
@@ -87,7 +89,7 @@
                 txt: 'All Catalogs',
                 linkClass: 'apdf-header-link',
                 icoClass: 'apdf-icon-all-catalogs',
-                url: '#1'
+                url: 'https://www.orlebarbrown.com/'
             },
             viewContent: {
                 txt: 'View Contents',
@@ -104,14 +106,14 @@
                 txt: 'Download',
                 linkClass: 'apdf-header-link',
                 icoClass: 'apdf-icon-download',
-                url: '#2'
+                url: 'https://neildemo.a.bigcontent.io/v1/static/OBA_AW19'
             }
         },
         carousel: {
             nextButton: '.ajs-swiper-next-',
             prevButton: '.ajs-swiper-prev-',
             speed: 300,
-            slidesPerView: 2,
+            slidesPerView: 1,
             paginationClickable: true,
             spaceBetween: 30,
             loop: false,
@@ -142,6 +144,14 @@
                         action: 'click',
                         callback: function (evt, settings) {
                             console.log('clicked', settings);
+                            if( settings.hotspot.selector == 'product'){
+                                window.open(settings.hotspot.target, '_blank');
+                            }
+                            hotspot.target
+                            if(window.location.href.indexOf('shoppable-pdf-viewer') !== -1){
+                                window.location.href = '../pdp/index.html#store=csdemo&baseUrl=https://c1.adis.ws&id=' +
+                                    settings.area.target;
+                            }
                         },
                         initCallback: function (settings) {
                             console.log('initialized', settings);

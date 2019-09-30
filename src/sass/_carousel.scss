@@ -11,19 +11,21 @@
 
   .swiper-slide-img {
     width: 100%;
+    height:inherit
   }
 
   &.apdf-carousel-aspect {
     .swiper-slide,
     .ajs-pdf-zoom-wrap {
       text-align: center;
-      height: auto;
+      //height: auto;
       position: relative;
       z-index: 2;
     }
 
     .ajs-pdf-zoom-wrap {
       margin: 0 auto;
+      height:inherit;
     }
 
     .swiper-slide-img,
@@ -32,7 +34,7 @@
       vertical-align: top;
       text-align: center;
       width: auto;
-      height: auto;
+      height: inherit;
       min-width: 0;
     }
   }
@@ -45,7 +47,7 @@
   .ajs-zoom-wrap {
     .ajs-zoomed {
       width: auto;
-      height: auto;
+      //height: auto;
       max-width: none;
     }
   }
